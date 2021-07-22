@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: product-service
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yml
+        namespace: b8c4835d-f7be-4f8e-8f65-095e5e8e2ecd
+        shared-configs:
+          - dataId: mysql.yml
+            refresh: true
