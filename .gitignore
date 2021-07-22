@@ -1,0 +1,20 @@
+# Created by .ignore support plugin (hsz.mobi)
+### cjz-ignore template
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+.mvn
+mvnw*
+
+### Other ###
+logs/
+log
+temp/
