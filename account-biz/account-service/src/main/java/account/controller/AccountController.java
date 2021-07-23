@@ -17,6 +17,12 @@ public class AccountController {
         return accountService.getById(id);
     }
 
+    @PostMapping("/updateById")
+    public Account updateById(@RequestBody Account account) {
+        accountService.updateById(account);
+        return getById(account.getId());
+    }
+
     @PostMapping("/save")
     public void save(@RequestBody Account account) {
         accountService.save(account);

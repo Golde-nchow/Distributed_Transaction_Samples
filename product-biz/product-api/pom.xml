@@ -13,7 +13,7 @@
 
     <dependencies>
         <dependency>
-            <artifactId>product-service</artifactId>
+            <artifactId>product-entity</artifactId>
             <groupId>org.example</groupId>
             <version>1.0-SNAPSHOT</version>
         </dependency>

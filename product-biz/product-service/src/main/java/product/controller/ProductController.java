@@ -17,6 +17,12 @@ public class ProductController {
         return productService.getById(id);
     }
 
+    @PostMapping("/updateById")
+    public Product updateById(@RequestBody Product product) {
+        productService.updateById(product);
+        return getById(product.getId());
+    }
+
     @PostMapping("/save")
     public void save(@RequestBody Product product) {
         productService.save(product);
