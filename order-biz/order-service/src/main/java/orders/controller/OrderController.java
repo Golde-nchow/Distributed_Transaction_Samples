@@ -37,9 +37,19 @@ public class OrderController {
         return accountFeign.getById(uid);
     }
 
+    @PostMapping("/account/updateById")
+    public Account updateAccountById(@RequestBody Account account) {
+        return accountFeign.updateById(account);
+    }
+
     @GetMapping("/product/getProductById/{pid}")
     public Product getProductById(@PathVariable Long pid) {
         return productFeign.getById(pid);
+    }
+
+    @PostMapping("/product/getProductById")
+    public Product updateProductById(@RequestBody Product product) {
+        return productFeign.updateById(product);
     }
 
 }
