@@ -40,7 +40,15 @@ https://seata.io/zh-cn/blog/download.html
 2、仓库地址：https://github.com/seata/seata/blob/develop/script/client/at/db/mysql.sql
 ````
 
-#### 五、添加自动数据源代理
+#### 六、添加自动数据源代理
 ````
 1、为开启全局事务的模块，在其启动类上，添加自动数据源代理配置
+````
+
+#### 注意：
+````
+1、若想要 nacos 自动读取配置，则需要把 Application 所在的 artifactId 设置为 ${artifactId}.yml
+
+2、否则就需要在 application/bootstrap.yml 中，设置 extension-configs
+   
 ````

@@ -6,7 +6,10 @@ spring:
       config:
         server-addr: 127.0.0.1:8848
         file-extension: yml
-        namespace: b8c4835d-f7be-4f8e-8f65-095e5e8e2ecd
-        shared-configs:
-          - dataId: mysql.yml
+        namespace: a56a2d09-133d-44b5-b72d-2d876ce9767a
+        extension-configs:
+          - dataId: order-server.yml
             refresh: true
+#        shared-configs:
+#          - dataId: mysql.yml
+#            refresh: true
