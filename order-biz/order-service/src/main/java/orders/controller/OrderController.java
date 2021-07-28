@@ -29,7 +29,7 @@ public class OrderController {
 
     @PostMapping("/save")
     public void save(@RequestBody Order order) {
-        orderService.save(order);
+        orderService.create(order);
     }
 
     @GetMapping("/account/getAccountById/{uid}")

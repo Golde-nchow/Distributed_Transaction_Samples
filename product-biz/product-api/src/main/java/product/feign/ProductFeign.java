@@ -1,10 +1,8 @@
 package product.feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
+import product.dto.DecreaseStorageDTO;
 import product.entity.Product;
 
 @FeignClient(name = "product-service")
@@ -18,5 +16,8 @@ public interface ProductFeign {
 
     @PostMapping("/product/save")
     void save(@RequestBody Product product);
+
+    @PostMapping("/product/decreaseStorageById")
+    void decreaseStorageById(@RequestBody DecreaseStorageDTO decreaseStorageDTO);
 
 }

@@ -4,9 +4,9 @@ https://seata.io/zh-cn/blog/download.html
 
 #### 二、修改配置文件 registry.config
 ````
-1、将 seata/config 的 registry.config，改成自己的 nacos 配置
+1、让 Seata-Server 注册到 Nacos。将 seata/config 的 registry.config，改成自己的 nacos 配置
 
-2、不要傻傻地自己新建。
+2、将 seata事务组配置也放到每个模块的配置文件中。
 
 3、由于 nacos，所以不需要 file.config
 ````
@@ -34,3 +34,13 @@ https://seata.io/zh-cn/blog/download.html
 ````
 ![avatar](images/startup/seata服务在nacos.png)
 
+#### 五、添加 undo_log 
+````
+1、为 account、order、product 的数据库添加 undo_log 数据表
+2、仓库地址：https://github.com/seata/seata/blob/develop/script/client/at/db/mysql.sql
+````
+
+#### 五、添加自动数据源代理
+````
+1、为开启全局事务的模块，在其启动类上，添加自动数据源代理配置
+````

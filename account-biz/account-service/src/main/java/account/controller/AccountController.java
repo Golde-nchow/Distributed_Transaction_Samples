@@ -1,6 +1,7 @@
 package account.controller;
 
 import account.Account;
+import account.dto.DecreaseAmountDTO;
 import account.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,6 +27,15 @@ public class AccountController {
     @PostMapping("/save")
     public void save(@RequestBody Account account) {
         accountService.save(account);
+    }
+
+    /**
+     * 减少余额
+     * @param decreaseAmountDTO 余额信息
+     */
+    @PostMapping("/decreaseAmountById")
+    public void decreaseAmountById(@RequestBody DecreaseAmountDTO decreaseAmountDTO) {
+        accountService.decreaseAmountById(decreaseAmountDTO);
     }
 
 }
