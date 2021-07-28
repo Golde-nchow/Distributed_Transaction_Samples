@@ -37,7 +37,10 @@ https://seata.io/zh-cn/blog/download.html
 #### 五、添加 undo_log 
 ````
 1、为 account、order、product 的数据库添加 undo_log 数据表
+
 2、仓库地址：https://github.com/seata/seata/blob/develop/script/client/at/db/mysql.sql
+
+3、不要以为 undo_log 没数据，是因为事务结束后，会异步删除里面的数据
 ````
 
 #### 六、添加自动数据源代理
@@ -47,8 +50,7 @@ https://seata.io/zh-cn/blog/download.html
 
 #### 注意：
 ````
-1、若想要 nacos 自动读取配置，则需要把 Application 所在的 artifactId 设置为 ${artifactId}.yml
+1、若想要 nacos 自动读取配置，则需要把 nacos 文件名设置为 Application 所在的 artifactId。例：order-service.yml 
 
 2、否则就需要在 application/bootstrap.yml 中，设置 extension-configs
-   
 ````
