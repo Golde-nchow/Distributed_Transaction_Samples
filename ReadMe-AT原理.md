@@ -42,11 +42,13 @@ Seata 使用2PC来管理全局事务
 3、若回滚，那么 TM 告诉 TC 需要进行全局事务的回滚。  
 4、TC 向所有 RM 发送回滚的指令。
 
-#### Seata-undo_log数据库
+#### Seata-undo_log表
 ````
-1、在第一阶段的时候，Seata-server 会把新旧数据放到 undo_log 数据库，下面的 json 已删除部分信息
+1、在第一阶段的时候，Seata-server 会把新旧数据放到 undo_log 表，下面的 json 已删除部分信息
 
 2、before_image 就是事务之前的数据，after_image 就是事务之后的数据
+
+3、遇到需要回滚的事务，利用 undo_log 表的数据进行反向补偿
 ````
 ![avatar](images/product-server-undo.png)
 
