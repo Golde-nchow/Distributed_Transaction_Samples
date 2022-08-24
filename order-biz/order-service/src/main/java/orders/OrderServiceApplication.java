@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @MapperScan(basePackages = "orders.mapper")
 @EnableDiscoveryClient
-@EnableFeignClients(basePackages = {"account.feign", "product.feign"})
+@EnableFeignClients(basePackages = {"order.feign"})
 public class OrderServiceApplication {
 
     public static void main(String[] args) {

@@ -1,15 +1,15 @@
 package orders.service;
 
 import account.dto.DecreaseAmountDTO;
-import account.feign.AccountFeign;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.seata.spring.annotation.GlobalTransactional;
 import order.Order;
+import order.feign.AccountFeign;
+import order.feign.ProductFeign;
 import orders.mapper.OrderMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import product.dto.DecreaseStorageDTO;
-import product.feign.ProductFeign;
 
 @Service
 public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements OrderService {

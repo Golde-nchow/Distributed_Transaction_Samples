@@ -1,13 +1,13 @@
 package orders.controller;
 
 import account.Account;
-import account.feign.AccountFeign;
 import order.Order;
+import order.feign.AccountFeign;
+import order.feign.ProductFeign;
 import orders.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import product.entity.Product;
-import product.feign.ProductFeign;
 
 @RestController
 @RequestMapping("order")
